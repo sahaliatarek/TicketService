@@ -7,7 +7,7 @@ WTTS is a simple ticket service that facilitates the discovery, temporary hold, 
 Setup (TEST, BUILD, AND RUN) 
 * [Download or clone the project from github.] 
 * [In the command line, navigate into the project folder. same level as the pom.xml] 
-* [To run the tests, run the command “mvn test”. Note that test will take approximately 40 seconds to complete] 
+* [To run the tests, run the command “mvn test”. Note that test will take approximately 42 seconds to complete] 
 * [To build the application run Maven command “mvn clean install ” Note that this command will run tests again] 
 * [When you successfully build the application, a target folder will be created.] 
 * [To run the application, enter to target folder “cd target”. Then run the command “java –jar wtts.war”.] 

@@ -1,6 +1,7 @@
 package com.homework;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.homework.entity.Seat;
 import com.homework.entity.SeatHold;
 import com.homework.service.TicketService;
 
@@ -165,9 +167,72 @@ public class TicketApplicationTests {
 					.isEqualTo(Constants.RESERVATION_EXPIRED);
 
 		} catch (InterruptedException e) {
-			
+
 			e.printStackTrace();
 		}
 
+	}
+
+	/**
+	 * Test the concurrent threads. create 3 threads, and start them same time.
+	 * make sure that, in reserveSeatsMap, the number of seats in each seatHold
+	 * will much the same number of seats in the list when we search by that
+	 * seatHoldId.
+	 * 
+	 * Note that seatHold3 can have the best available seats, or seatHold1 or
+	 * seatHold2. that totally depends on which thread executes first.
+	 * 
+	 * @throws InterruptedException
+	 */
+	@Test
+	public void multiThreading() throws InterruptedException {
+
+		Thread thread1 = new Thread() {
+
+			public void run() {
+				SeatHold seatHold1 = ticketService.findAndHoldSeats(10, customerEmail);
+				ticketService.reserveSeats(seatHold1.getSeatHoldId(), customerEmail);
+			}
+
+		};
+		Thread thread2 = new Thread() {
+
+			public void run() {
+				SeatHold seatHold2 = ticketService.findAndHoldSeats(2, customerEmail);
+				ticketService.reserveSeats(seatHold2.getSeatHoldId(), customerEmail);
+			}
+
+		};
+		Thread thread3 = new Thread() {
+
+			public void run() {
+				SeatHold seatHold3 = ticketService.findAndHoldSeats(6, customerEmail);
+				ticketService.reserveSeats(seatHold3.getSeatHoldId(), customerEmail);
+			}
+
+		};
+
+		thread1.start();
+		thread2.start();
+		thread3.start();
+
+		Thread.sleep(2000);
+
+		boolean condition = false;
+		for (SeatHold value : ticketService.getReservedSeatHoldMap().values()) {
+			condition = NumberOfSeats(value);
+		}
+
+		assertTrue(condition);
+
+	}
+
+	private boolean NumberOfSeats(SeatHold seatHold) {
+		int count = 0;
+		for (Seat seat : ticketService.getSeats()) {
+			if (seat.getSeatHoldId() == seatHold.getSeatHoldId())
+				count++;
+		}
+		return count == seatHold.getSeatsLocations().length;
 	}
 }

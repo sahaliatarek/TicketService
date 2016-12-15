@@ -1,5 +1,9 @@
 package com.homework.service;
 
+import java.util.List;
+import java.util.Map;
+
+import com.homework.entity.Seat;
 import com.homework.entity.SeatHold;
 
 public interface TicketService {
@@ -40,4 +44,17 @@ public interface TicketService {
 	 * it to accomplish the Tests.
 	 */
 	public void initializeOrRefreshApps();
+	
+	/**
+	 * Need this getter to complete the multi-threading Test
+	 * @return
+	 */
+	public Map<Integer, SeatHold> getReservedSeatHoldMap();
+	
+
+	/**
+	 * Need this getter to complete the multi-threading Test
+	 * @return
+	 */
+	public List<Seat> getSeats();
 }

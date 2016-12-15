@@ -283,4 +283,24 @@ public class TicketServiceImpl implements TicketService {
 		}
 
 	}
+
+	/**
+	 * Need this getter to complete the multi-threading Test
+	 * @return
+	 */
+	public Map<Integer, SeatHold> getReservedSeatHoldMap() {
+		return reservedSeatHoldMap;
+	}
+	
+	/**
+	 * Need this getter to complete the multi-threading Test
+	 * @return
+	 */
+	public List<Seat> getSeats() {
+		return seats;
+	}
+	
+	 
+	
+	
 }
