@@ -34,7 +34,8 @@ There are 8 Unit Tests in WTTS, documented in details in the source code.
  
  
 ## High Level Design 
-Please access the High Level Design Diagram (WTTS.pdf) WTTS.pdf. 
+Please access the High Level Design Diagram.
+
 The Idea around this design is to separate the three main tasks from each other, Search for available seats, hold the best seats, and reserve the held seats. For that, the application uses 3 data structures and 1 primitive variable. 
  
  ```
