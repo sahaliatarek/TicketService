@@ -10,7 +10,7 @@ Setup (TEST, BUILD, AND RUN)
 * [To run the tests, run the command “mvn test”. Note that test will take approximately 40 seconds to complete] 
 * [To build the application run Maven command “mvn clean install ” Note that this command will run tests again] 
 * [When you successfully build the application, a target folder will be created.] 
-* [To run the application, enter to target folder “cd target”. Then run the command “java –war wtts.war”.] 
+* [To run the application, enter to target folder “cd target”. Then run the command “java –jar wtts.war”.] 
 * [Open the browser, and visit the link http://localhost:23000 where the application should be up and running.] 
  
  
@@ -34,7 +34,8 @@ There are 8 Unit Tests in WTTS, documented in details in the source code.
  
  
 ## High Level Design 
-Please access the High Level Design Diagram (WTTS.pdf) WTTS.pdf. 
+Please access the High Level Design Diagram [here](https://github.com/sahaliatarek/TicketService/blob/master/Ticket_Application/WTTS.pdf).
+
 The Idea around this design is to separate the three main tasks from each other, Search for available seats, hold the best seats, and reserve the held seats. For that, the application uses 3 data structures and 1 primitive variable. 
  
  ```
