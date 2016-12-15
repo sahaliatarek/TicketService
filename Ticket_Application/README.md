@@ -10,7 +10,7 @@ Setup (TEST, BUILD, AND RUN)
 * [To run the tests, run the command “mvn test”. Note that test will take approximately 40 seconds to complete] 
 * [To build the application run Maven command “mvn clean install ” Note that this command will run tests again] 
 * [When you successfully build the application, a target folder will be created.] 
-* [To run the application, enter to target folder “cd target”. Then run the command “java –war wtts.war”.] 
+* [To run the application, enter to target folder “cd target”. Then run the command “java –jar wtts.war”.] 
 * [Open the browser, and visit the link http://localhost:23000 where the application should be up and running.] 
  
  
