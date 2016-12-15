@@ -11,8 +11,8 @@
 	<h1>Welcome To Ticket Service Application</h1>
 	<h3 style="color:red;">${NotValid}</h3>
 	<form id="applicantForm" method="POST" action="/hold/">
-		Number Of Seats to Hold: <input type="text" id="nbreSeatsToHold" /> <br>
-		Your Email: <input type="text" id="email" /><br>
+		Number Of Seats to Hold: <input type="text" id="nbreSeatsToHold" required /> <br>
+		Your Email: <input type="text" id="email" required /><br>
 		<input	type="submit" name="submit" value="Hold" />
 	</form>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"
