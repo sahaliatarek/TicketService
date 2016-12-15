@@ -12,6 +12,7 @@ Setup (TEST, BUILD, AND RUN)
 * [When you successfully build the application, a target folder will be created.] 
 * [To run the application, enter to target folder “cd target”. Then run the command “java –jar wtts.war”.] 
 * [Open the browser, and visit the link http://localhost:23000 where the application should be up and running.] 
+* [Please make sure that you have JDK 1.8 in the classpath.] 
  
  
 ## Assumptions 
