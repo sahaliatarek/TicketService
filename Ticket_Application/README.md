@@ -69,7 +69,7 @@ This solution uses multi-threading and allows concurrent access to some resource
  
  
 ## Beyond 
-We are assuming that the best available seats to hold are the first available found in the closest line to the stage. If this assumption changes, like for example if we imagine the venue a an movie amphitheater, I personally will prefer a seat in between the middle and the last line. Which makes requirements more complex. But, the Ideal solution will be to give the state, and location of each seat to users in the front_end. And with some observable pasterns and reactive programming, the application can maintain the state of each seat in real time for users, so they can choose any available seats, according to their own preferences. However, this solution requires a reach client user interface, which is not mandatory in the requirements. 
+We are assuming that the best available seats to hold are the first available found in the closest line to the stage. If this assumption changes, like for example if we imagine the venue a an movie amphitheater, I personally will prefer a seat in between the middle and the last line. Which makes requirements more complex. But, the Ideal solution will be to give the state, and location of each seat to users in the front_end. And with some observable pasterns and reactive programming, the application can maintain the state of each seat in real time for users, so they can choose any available seats, according to their own preferences. However, this solution requires a rich client user interface, which is not mandatory in the requirements. 
  
  
  
