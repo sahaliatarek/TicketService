@@ -1,2 +1,6 @@
 server:
   port: 23000
+spring:  
+    profiles:
+    active:
+    - default
